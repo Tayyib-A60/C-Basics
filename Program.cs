@@ -50,7 +50,7 @@ namespace C_Basics
 
             // ConvertStringToNumber();
 
-            var name = GetName();
+            // var name = GetName();
 
             // Console.WriteLine(name);
 
@@ -69,45 +69,52 @@ namespace C_Basics
 
            Console.WriteLine(scoreNumber.GetType());
        }
+       
 
-       static string GetName()
+       static float GetValue()
        {
-        //    var name = "Adeshina Rofiah";
-
-        //    return name;
-            var val = Console.ReadLine();
-
-            var canConvert = Int32.TryParse(val, out int numVal);
-
-            Console.WriteLine("Wrong input");
-
-            return "Adeshina Rofiah";
+           var val = Console.ReadLine();
+           
+           var canConvert = float.TryParse(val, out float numVal);
+           if (canConvert == false) {
+               Console.WriteLine("invalid input");
+           }
+           
+           
+           return numVal;
        }
 
        static double CalculateCGPA()
        {
             Console.WriteLine("What is your name?");
-
             var name = Console.ReadLine();
 
-            Console.WriteLine("Enter your score for GNS 101"); // Score 23 units 2
+            Console.WriteLine("Enter your score for GNS 101"); // Score 23 
+            var gns101 = GetValue(); // Convert to floating point
+            
+            Console.WriteLine("Enter your credit unit for GNS 101");
+            var cdGns = Convert.ToInt32(Console.ReadLine());
 
-            var gns101 = Convert.ToInt32(Console.ReadLine()); // Convert to number
+            Console.WriteLine("Enter your score for CHM 101"); // Score 73 
+            var chm101 = GetValue(); // Convert to floating point
 
-            Console.WriteLine("Enter your score for CHM 101"); // Score 73 units 3
+            Console.WriteLine("Enter your credit unit for CHM 101"); //credit unit
+            var cdChm = Convert.ToInt32(Console.ReadLine());
 
-            var chm101 = Convert.ToInt32(Console.ReadLine()); // Convert to number
+            Console.WriteLine("Enter your score for MTH 101"); // Score 53
+            var mth101 = GetValue(); // Convert to floating point 
 
-            Console.WriteLine("Enter your score for MTH 101"); // Score 53 units 3
-
-            var mth101 = Convert.ToInt32(Console.ReadLine()); // Convert to 
+            Console.WriteLine("Enter your credit unit for MTH 101");
+            var cdMth = Convert.ToInt32(Console.ReadLine());
             
             var cgp = 0;
-            cgp += GetGrade(gns101) * 2; // cgp = 0
-            cgp += GetGrade(chm101) * 3; // cgp = 5
-            cgp += GetGrade(mth101) * 3; // cgp = 8
+            cgp += GetGrade(gns101) * cdGns; // cgp = 0
+            cgp += GetGrade(chm101) * cdChm; // cgp = 5
+            cgp += GetGrade(mth101) * cdMth; // cgp = 8
 
-            double cgpa = cgp/8.0; // 8 is the sum of course units
+            var totalCredit = cdGns + cdChm +cdMth;
+
+            double cgpa = cgp/totalCredit; // 8 is the sum of course units
 
             return cgpa;
 
@@ -117,7 +124,7 @@ namespace C_Basics
             // Take all inputs as floating point values
        }
 
-       static int GetGrade(int score)
+       static int GetGrade(float score)
        {
            var gp = 0;
            // 20, 89, 0, 44, 45, 58, 63, 72, 100
