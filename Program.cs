@@ -6,7 +6,34 @@ namespace C_Basics
     {
         static void Main(string[] args)
         {
-            
+            // var cat1 = new Cat();
+            // cat1.Name = "Ambi";
+            // cat1.NoOfLegs = 4;
+            // cat1.Tails = 1;
+            // cat1.HasWhiskers = true;
+
+            // Console.WriteLine(cat1.Name);
+            // cat1.Talk();
+
+            var human = new HumanBeing()
+            {
+                Name = "Rofiah Adeshina",
+                Age = 23,
+                IsGay = false,
+                Height = 5.8F
+            };
+
+            human.Talk();
+
+            var human2 = new HumanBeing()
+            {
+                Name = "Toyeeb Adesokan",
+                Age = 25,
+                IsGay = false,
+                Height = 5.2F
+            };
+
+            human2.Talk();
         }
 
         static void ForLoop(int count)
@@ -77,15 +104,15 @@ namespace C_Basics
 
             double cgpa = 4.69;
 
-            decimal cgpaDec = 4.69m;
+            // decimal cgpaDec = 4.69m;
 
             float cgpaFloat = -4.69f;
 
-            bool married = false;
+            // bool married = false;
 
-            bool foundSomeone = true;
+            // bool foundSomeone = true;
 
-            bool loveHim = true;
+            // bool loveHim = true;
 
             Console.WriteLine("My name is " + name + ", I am a " + gender + " I am " + age + " years old");
 
