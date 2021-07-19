@@ -98,7 +98,12 @@ namespace C_Basics
             }
             
             Console.WriteLine("Enter your credit unit for GNS 101");
-            var cdGns = Convert.ToInt32(Console.ReadLine());
+            var cdGns = GetCreditValue();
+
+            if (cdGns.Item2 == false) {
+                Console.WriteLine("Invalid input");
+                return 0;
+            }
 
             Console.WriteLine("Enter your score for CHM 101"); // Score 73 
             var chm101 = GetScoreValue(); // Convert to floating point
@@ -109,7 +114,12 @@ namespace C_Basics
             }
 
             Console.WriteLine("Enter your credit unit for CHM 101"); //credit unit
-            var cdChm = Convert.ToInt32(Console.ReadLine());
+            var cdChm = GetCreditValue();
+
+            if (cdChm.Item2 == false) {
+                Console.WriteLine("Invalid input");
+                return 0;
+            }
 
             Console.WriteLine("Enter your score for MTH 101"); // Score 53
             var mth101 = GetScoreValue(); // Convert to floating point 
@@ -120,16 +130,21 @@ namespace C_Basics
             }
 
             Console.WriteLine("Enter your credit unit for MTH 101");
-            var cdMth = Convert.ToInt32(Console.ReadLine());
+            var cdMth = GetCreditValue();
+
+            if (cdMth.Item2 == false) {
+                Console.WriteLine("Invalid input");
+                return 0;
+            }
             
             var cgp = 0;
-            cgp += GetGrade(gns101.Item1) * cdGns; // cgp = 0
-            cgp += GetGrade(chm101.Item1) * cdChm; // cgp = 5
-            cgp += GetGrade(mth101.Item1) * cdMth; // cgp = 8
+            cgp += GetGrade(gns101.Item1) * cdGns.Item1; // cgp = 12
+            cgp += GetGrade(chm101.Item1) * cdChm.Item1; // cgp = 9
+            cgp += GetGrade(mth101.Item1) * cdMth.Item1; // cgp = 10
 
-            var totalCredit = cdGns + cdChm +cdMth;
+            var totalCredit = cdGns.Item1 + cdChm.Item1 + cdMth.Item1;
 
-            double cgpa = cgp/totalCredit; // 8 is the sum of course units
+            double cgpa = cgp/(float)totalCredit; // casting to float => (float)value
 
             return cgpa;
 
@@ -145,10 +160,22 @@ namespace C_Basics
             
             var canConvert = float.TryParse(val, out float numVal);
 
-            if (canConvert == false) {
-                Console.WriteLine("invalid input");
+            if(numVal < 0){
+                canConvert = false;
             }
+ 
+            return (numVal, canConvert);
+        }
+        static (int, bool) GetCreditValue()
+        {
+            var val = Console.ReadLine();
             
+            var canConvert = Int32.TryParse(val, out int numVal);
+
+            if(numVal < 0){
+                canConvert = false;
+            }
+  
             return (numVal, canConvert);
         }
 
