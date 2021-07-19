@@ -6,57 +6,103 @@ namespace C_Basics
     {
         static void Main(string[] args)
         {
+            
+        }
 
+        static void ForLoop(int count)
+        {
+            // for(int i = 0; i <= count; i++)
+            // {
+            //     Console.WriteLine(i);
+            // }
+
+            for(int i = count; i > 0; i -= 2) // i -= 2 is i = i - 2
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        static void WhileLoop(int count)
+        {
+            // 10
+            // while(count >= 0)
+            // {
+            //     Console.WriteLine(count);
+            //     count--;
+            // }
+
+            var i = 0;
+
+            while(count >= i)
+            {
+                Console.WriteLine(i);
+                i++;
+            }
+        }
+
+        static void Switcher(char gender)
+        {
+            switch(gender)
+            {
+                case 'M':
+                    Console.WriteLine("You are a man");
+                break;
+                case 'F':
+                    Console.WriteLine("You're a woman");
+                break;
+                default:
+                    Console.WriteLine("You're a bastard");
+                break;
+            }
+        }
+
+        static void InitialLessons()
+        {
             // Readline Writeline
-            // Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!");
 
-            // var textFromReadline = Console.ReadLine();
+            var textFromReadline = Console.ReadLine();
 
-            // Console.WriteLine("You entered " + textFromReadline);
+            Console.WriteLine("You entered " + textFromReadline);
 
             // Variables and DataTypes
 
             // Primitive datatypes: string, int, double, float, decimal, boolean, char
 
-            // string name = "Miss Hardesh";
+            string name = "Miss Hardesh";
 
-            // char gender = 'F';
+            char gender = 'F';
 
-            // int age = 24;
+            int age = 24;
 
-            // double cgpa = 4.69;
+            double cgpa = 4.69;
 
-            // decimal cgpaDec = 4.69m;
+            decimal cgpaDec = 4.69m;
 
-            // float cgpaFloat = -4.69f;
+            float cgpaFloat = -4.69f;
 
-            // bool married = false;
+            bool married = false;
 
-            // bool foundSomeone = true;
+            bool foundSomeone = true;
 
-            // bool loveHim = true;
+            bool loveHim = true;
 
-            // Console.WriteLine("My name is " + name + ", I am a " + gender + " I am " + age + " years old");
+            Console.WriteLine("My name is " + name + ", I am a " + gender + " I am " + age + " years old");
 
-            // Console.WriteLine($"My name is {name}, I am {age} years old");
+            Console.WriteLine($"My name is {name}, I am {age} years old");
 
-            // Console.WriteLine("My name is {0}, I am {1} years old", name, age);
+            Console.WriteLine("My name is {0}, I am {1} years old", name, age);
 
             // Math operations
 
-            // Console.WriteLine(Math.Floor(cgpa));
+            Console.WriteLine(Math.Floor(cgpa));
 
-            // Console.WriteLine(Math.Abs(cgpaFloat));
+            Console.WriteLine(Math.Abs(cgpaFloat));
 
-            // ConvertStringToNumber();
+            ConvertStringToNumber();
 
-            // var name = GetName();
-
-            // Console.WriteLine(name);
-            // TupleType();
-
-            var cgpa = CalculateCGPA();
-            Console.WriteLine($"Your calculated cgpa is {cgpa}");
+            Console.WriteLine(name);
+            TupleType();
 
         }
 
@@ -197,8 +243,6 @@ namespace C_Basics
 
                 return gp;
         }
-
-
     }
 
 }
