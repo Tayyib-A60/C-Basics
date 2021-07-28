@@ -6,34 +6,50 @@ namespace C_Basics
     {
         static void Main(string[] args)
         {
-            // var cat1 = new Cat();
-            // cat1.Name = "Ambi";
-            // cat1.NoOfLegs = 4;
-            // cat1.Tails = 1;
-            // cat1.HasWhiskers = true;
+            var cat1 = new Cat();
+            cat1.Name = "Ambi";
+            cat1.NoOfLegs = 4;
+            cat1.Tails = 1;
+            cat1.HasWhiskers = true;
+            // cat1.AnimalClass = "Mammal";
 
-            // Console.WriteLine(cat1.Name);
-            // cat1.Talk();
+            // Console.WriteLine(cat1);
+            cat1.Talk();
+            cat1.Walk();
+            cat1.MRNIGERD();
 
-            var human = new HumanBeing()
+            if(cat1 is Animal)
             {
-                Name = "Rofiah Adeshina",
-                Age = 23,
-                IsGay = false,
-                Height = 5.8F
-            };
+                var animal = cat1 as Animal;
+                var animal2 = (Animal)cat1;
+                Console.WriteLine("A cat is an animal");
+            }
 
-            human.Talk();
 
-            var human2 = new HumanBeing()
-            {
-                Name = "Toyeeb Adesokan",
-                Age = 25,
-                IsGay = false,
-                Height = 5.2F
-            };
+            // var animal = new Animal(); // Can't create an instance of an abstract class or an interface
 
-            human2.Talk();
+            // var human = new HumanBeing()
+            // {
+            //     Name = "Rofiah Adeshina",
+            //     Age = 23,
+            //     IsGay = false
+            //     // Height = 5.8F
+            // };
+
+            // Console.WriteLine(human.Height);
+
+            // human.Talk();
+
+            // var human2 = new HumanBeing()
+            // {
+            //     Name = "Toyeeb Adesokan",
+            //     Age = 25,
+            //     IsGay = false
+            //     // Height = 5.2F
+            // };
+
+            // Console.WriteLine(human2.Height);
+            // human2.Talk();
         }
 
         static void ForLoop(int count)
