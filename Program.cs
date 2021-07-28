@@ -14,14 +14,25 @@ namespace C_Basics
 
             // car1.DRIVE();
 
-            var benzGlt = new Benz();
+            var benzGlt = new Benz("Benzi oloye");
             benzGlt.Tire = 4;
             benzGlt.doors = 4;
             benzGlt.IsFourWheelDrive = true;
             benzGlt.IsAutomatic = true;
 
-            benzGlt.DRIVE();
-            benzGlt.Park();
+            Benz.GetCarName();
+
+            Console.WriteLine("Enter the following in the format below. Name, Age, Gender, Level");
+            Console.WriteLine("i.e. Adesokan Rofiah, 23, F, 500L");
+
+            var studentDetails = Console.ReadLine().Split(",");
+
+            Console.WriteLine(studentDetails[3].Trim());
+
+
+            // benzGlt.DRIVE();
+            // benzGlt.DRIVE(5);
+            // benzGlt.Park();
 
 
 

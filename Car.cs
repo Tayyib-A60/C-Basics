@@ -10,6 +10,7 @@ namespace C_Basics
       public int doors {get; set;}
       public bool IsFourWheelDrive {get; set;}
       public bool IsAutomatic {get; set;}
+      protected static string Name { get; set; }
 
 
 
@@ -18,12 +19,22 @@ namespace C_Basics
           Console.WriteLine("The car moves forward or backwards");
       }
 
+      public void DRIVE(int x)
+      {
+          Console.WriteLine("You entered {0}", x);
+      }
+
       public abstract void Park();
     }
 
 
     class Benz : Car
     {
+        public Benz(string name)
+        {
+            Name = name;
+        }
+
         public override void DRIVE()
         {
             Console.WriteLine("Car can move forward, backwards, left and right too");
@@ -34,6 +45,11 @@ namespace C_Basics
         {
             Console.WriteLine("Parks Automatically");
 
+        }
+
+        public static void GetCarName()
+        {
+            Console.WriteLine("The name of this car is {0}", Name);
         }
 
     }
