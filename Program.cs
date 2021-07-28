@@ -6,50 +6,51 @@ namespace C_Basics
     {
         static void Main(string[] args)
         {
-            var cat1 = new Cat();
-            cat1.Name = "Ambi";
-            cat1.NoOfLegs = 4;
-            cat1.Tails = 1;
-            cat1.HasWhiskers = true;
-            // cat1.AnimalClass = "Mammal";
+            // var car1 = new Car();
+            // car1.Tire = 4;
+            // car1.doors = 2;
+            // car1.IsFourWheelDrive = false;
+            // car1.IsAutomatic = true;
 
-            // Console.WriteLine(cat1);
-            cat1.Talk();
-            cat1.Walk();
-            cat1.MRNIGERD();
+            // car1.DRIVE();
 
-            if(cat1 is Animal)
-            {
-                var animal = cat1 as Animal;
-                var animal2 = (Animal)cat1;
-                Console.WriteLine("A cat is an animal");
-            }
+            var benzGlt = new Benz();
+            benzGlt.Tire = 4;
+            benzGlt.doors = 4;
+            benzGlt.IsFourWheelDrive = true;
+            benzGlt.IsAutomatic = true;
+
+            benzGlt.DRIVE();
+            benzGlt.Park();
+
+
+
+
+
+
+            // var cat1 = new Cat();
+            // cat1.Name = "Ambi";
+            // cat1.NoOfLegs = 4;
+            // cat1.Tails = 1;
+            // cat1.HasWhiskers = true;
+            // // cat1.AnimalClass = "Mammal";
+
+            // // Console.WriteLine(cat1);
+            // cat1.Talk();
+            // cat1.Walk();
+            // cat1.MRNIGERD();
+
+            // if(cat1 is Animal)
+            // {
+            //     var animal = cat1 as Animal;
+            //     var animal2 = (Animal)cat1;
+            //     Console.WriteLine("A cat is an animal");
+            // }
 
 
             // var animal = new Animal(); // Can't create an instance of an abstract class or an interface
 
-            // var human = new HumanBeing()
-            // {
-            //     Name = "Rofiah Adeshina",
-            //     Age = 23,
-            //     IsGay = false
-            //     // Height = 5.8F
-            // };
-
-            // Console.WriteLine(human.Height);
-
-            // human.Talk();
-
-            // var human2 = new HumanBeing()
-            // {
-            //     Name = "Toyeeb Adesokan",
-            //     Age = 25,
-            //     IsGay = false
-            //     // Height = 5.2F
-            // };
-
-            // Console.WriteLine(human2.Height);
-            // human2.Talk();
+           
         }
 
         static void ForLoop(int count)
