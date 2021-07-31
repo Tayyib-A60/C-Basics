@@ -2,15 +2,13 @@ namespace C_Basics
 {
     public class Course
     {
-        public Course(int units, float testScore, float examScore, string name, char grade, string courseCode, int gradePoint)
+        public Course(int units, float testScore, float examScore, string name, string courseCode)
         {
             _units = units;
             _testScore = testScore;
             _examScore = examScore;
             _name = name;
-            _grade = grade;
             _courseCode = courseCode;
-            _gradePoint = gradePoint;
         }
 
         private int _units { get; set; }
@@ -48,6 +46,26 @@ namespace C_Basics
             } else {
                _gradePoint = 5;
             }
+        }
+
+        private void ComputeGrade()
+        {
+            var score = _testScore + _examScore;
+
+            if(score < 40) {
+                _grade = 'F';
+            } else if(score > 40 & score < 45){
+               _grade = 'E';
+            } else if(score >= 45 & score < 50) {
+               _grade = 'D';
+            } else if(score >= 50 & score < 60) {
+               _grade = 'C';
+            } else if(score >= 60 & score < 70){
+               _grade = 'B';
+            } else if(score >= 60){
+                _grade = 'A';
+            }
+
         }
 
     }
