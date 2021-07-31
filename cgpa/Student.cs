@@ -11,6 +11,7 @@ namespace C_Basics
             _age = age;
             _level = level;
             _gender = gender;
+            _studentCourses = new List<Course>();
         }
         // Create getter method for (name, age, level, gender)
         private string _name { get; set; }
