@@ -5,20 +5,20 @@ namespace C_Basics
 {
     public class Student
     {
-        public Student(string name, int age, char gender, string level)
+        public Student(string name, int age, Gender gender, string level)
         {
             _name = name;
             _age = age;
             _level = level;
             _gender = gender;
         }
-        // Name, Age, Level, Gender, List<Course> Courses
+        // Create getter method for (name, age, level, gender)
         private string _name { get; set; }
         private int _age { get; set; }
         private string _level { get; set; }
         private float _cgpa { get; set; }
-        private char _gender { get; set; } // Act
-        private List<Course> _studentCourses { get; set; }
+        private Gender _gender { get; set; }
+        private List<Course> _studentCourses { get; set; } // We're likely to encounter an issue with this list
 
         public void AddCourse(Course courseToAdd)
         {
@@ -27,15 +27,16 @@ namespace C_Basics
 
         public float GetCalculatedCGPA()
         {
+            CalculateCGPA();
             return _cgpa;
         }
 
-        private float CalculateCGPA()
+        private void CalculateCGPA()
         {
             var totalCGP = 0;
             var totalUnits = 0;
 
-            for (int i = 0; i <= _studentCourses.Count-1; i++){
+            for (int i = 0; i <= _studentCourses.Count-1; i++) {
                 totalCGP += _studentCourses[i].GetGradePointAverage();
                 totalUnits += _studentCourses[i].GetCourseUnits();
             }
@@ -44,7 +45,7 @@ namespace C_Basics
             // Add total CGP and Units
             // Calculates
 
-            return (float)totalCGP/(float)totalUnits;
+            _cgpa = (float)totalCGP/(float)totalUnits;
         }
     }
 }
