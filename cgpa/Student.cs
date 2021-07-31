@@ -32,12 +32,19 @@ namespace C_Basics
 
         private float CalculateCGPA()
         {
+            var totalCGP = 0;
+            var totalUnits = 0;
+
             for (int i = 0; i <= _studentCourses.Count-1; i++){
-            
+                totalCGP += _studentCourses[i].GetGradePointAverage();
+                totalUnits += _studentCourses[i].GetCourseUnits();
             }
+            
             // Get CGP and Units for each course
             // Add total CGP and Units
             // Calculates
+
+            return (float)totalCGP/(float)totalUnits;
         }
     }
 }
