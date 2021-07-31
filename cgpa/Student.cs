@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace C_Basics
 {
-    class Student
+    public class Student
     {
         // Name, Age, Level, Gender, List<Course> Courses
         public string Name { get; set; }
@@ -11,17 +11,5 @@ namespace C_Basics
         public string Level { get; set; }
         public char Gender { get; set; }
         public List<Course> Courses { get; set; }
-    }
-
-    class Course
-    {
-        public int Units { get; set; }
-        public float TestScore { get; set; }
-        public float ExamScore { get; set; }
-        public string Name { get; set; }
-        public char Grade { get; set; }
-        public string CourseCode { get; set; }
-        public int GradePoint { get; set; }
-        
     }
 }
