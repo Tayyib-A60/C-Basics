@@ -18,7 +18,7 @@ namespace C_Basics
         private char _grade { get; set; }
         private string _courseCode { get; set; }
         private int _gradePoint { get; set; }
-        private int _cummulativeGradePoint { get; set; }
+        private int _gradePointAverage { get; set; }
         
         public int GetGradePoint()
         {
@@ -35,9 +35,9 @@ namespace C_Basics
             return _units;
         }
 
-        public int GetCummulativeGradePoint()
+        public int GetGradePointAverage()
         {
-            return _cummulativeGradePoint;
+            return _gradePointAverage;
         }
 
         private void CalculateGradeParameters()
@@ -48,23 +48,23 @@ namespace C_Basics
 
             if(score < 45) {
                 _gradePoint = 0;
-                _cummulativeGradePoint = _gradePoint * _units;
+                _gradePointAverage = _gradePoint * _units;
                 _grade = 'F';
             } else if(score < 50) {
                _gradePoint = 2;
-               _cummulativeGradePoint = _gradePoint * _units;
+               _gradePointAverage = _gradePoint * _units;
                _grade = 'D';
             } else if(score < 60) {
                _gradePoint = 3;
-               _cummulativeGradePoint = _gradePoint * _units;
+               _gradePointAverage = _gradePoint * _units;
                _grade = 'C';
             } else if(score < 70) {
                _gradePoint = 4;
-               _cummulativeGradePoint = _gradePoint * _units;
+               _gradePointAverage = _gradePoint * _units;
                _grade = 'B';
             } else {
                _gradePoint = 5;
-               _cummulativeGradePoint = _gradePoint * _units;
+               _gradePointAverage = _gradePoint * _units;
                _grade = 'A';
             }
         }
