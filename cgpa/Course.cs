@@ -9,6 +9,8 @@ namespace C_Basics
             _examScore = examScore;
             _name = name;
             _courseCode = courseCode;
+
+            CalculateGradeParameters();
         }
 
         private int _units { get; set; }
