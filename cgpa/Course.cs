@@ -18,6 +18,7 @@ namespace C_Basics
         private char _grade { get; set; }
         private string _courseCode { get; set; }
         private int _gradePoint { get; set; }
+        private int _cummulativeGradePoint { get; set; }
         
         public int GetGradePoint()
         {
@@ -29,7 +30,17 @@ namespace C_Basics
             return _grade;
         }
 
-        private void CalculateGradePoint()
+        public int GetCourseUnits()
+        {
+            return _units;
+        }
+
+        public int GetCummulativeGradePoint()
+        {
+            return _cummulativeGradePoint;
+        }
+
+        private void CalculateGradeParameters()
         {
             var score = _testScore + _examScore;
 
@@ -37,35 +48,25 @@ namespace C_Basics
 
             if(score < 45) {
                 _gradePoint = 0;
+                _cummulativeGradePoint = _gradePoint * _units;
+                _grade = 'F';
             } else if(score < 50) {
                _gradePoint = 2;
+               _cummulativeGradePoint = _gradePoint * _units;
+               _grade = 'D';
             } else if(score < 60) {
                _gradePoint = 3;
+               _cummulativeGradePoint = _gradePoint * _units;
+               _grade = 'C';
             } else if(score < 70) {
                _gradePoint = 4;
+               _cummulativeGradePoint = _gradePoint * _units;
+               _grade = 'B';
             } else {
                _gradePoint = 5;
+               _cummulativeGradePoint = _gradePoint * _units;
+               _grade = 'A';
             }
-        }
-
-        private void ComputeGrade()
-        {
-            var score = _testScore + _examScore;
-
-            if(score < 40) {
-                _grade = 'F';
-            } else if(score > 40 & score < 45){
-               _grade = 'E';
-            } else if(score >= 45 & score < 50) {
-               _grade = 'D';
-            } else if(score >= 50 & score < 60) {
-               _grade = 'C';
-            } else if(score >= 60 & score < 70){
-               _grade = 'B';
-            } else if(score >= 60){
-                _grade = 'A';
-            }
-
         }
 
     }

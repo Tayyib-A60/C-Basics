@@ -35,6 +35,8 @@ namespace C_Basics
             // benzGlt.Park();
 
 
+            // var student = new Student("name", 23, 'F');
+
 
 
 
