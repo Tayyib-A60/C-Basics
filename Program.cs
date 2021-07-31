@@ -17,6 +17,18 @@ namespace C_Basics
             rofiah.AddCourse(ELT504);
 
             Console.WriteLine(rofiah.GetCalculatedCGPA());
+
+            // Get Student Attributes as inputs and use them to create the student
+            // Get how many courses a student is taking
+            // Get each course attributes as inputs and use them to create a course
+            // Add created course to student courses
+            // Calculate Student GPA
+
+
+            // Useful Resources
+            // "Adeshina, Rofiah, Toyeeb".Split(",")  would result into [Adeshina, Rofiah, Toyeeb] as an array
+            // Change Gender to char (temporarily)
+            // Use for loop on method that get course inputs and create courses after getting how many courses a student offers
         }
     }
 }
