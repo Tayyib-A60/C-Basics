@@ -5,12 +5,13 @@ namespace C_Basics
 {
     public class Student
     {
-        public Student(string name, int age, Gender gender, string level)
+        public Student(string name, int age, char gender, string level, int nuofcourses)
         {
             _name = name;
             _age = age;
             _level = level;
             _gender = gender;
+            NumberOfCourses = nuofcourses;
             _studentCourses = new List<Course>();
         }
         // Create getter method for (name, age, level, gender)
@@ -18,7 +19,8 @@ namespace C_Basics
         private int _age { get; set; }
         private string _level { get; set; }
         private float _cgpa { get; set; }
-        private Gender _gender { get; set; }
+        public int NumberOfCourses { get; set; }
+        private char _gender { get; set; }
         private List<Course> _studentCourses { get; set; } // We're likely to encounter an issue with this list
 
         public void AddCourse(Course courseToAdd)
